@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#header{
+    background-image:url('../images/desktop/image-hero.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:40rem;
+}
+
+@media(max-width:768px){ /**/
+    #header{
+        background-image:url('../images/mobile/image-hero.jpg');
+        background-size:cover;
+        height:36rem;
+    }
+}
+.nav-item{
+  @apply  hover:border-b-[0.5px] hover:border-gray-100  h-7;
+}
+.nav-container{
+  @apply md:flex space-x-8   text-white text-[16px] font-alata font-extrabold  hidden;
+}
+.nav-content{
+  @apply p-6 md:p-8 md:justify-start   leading-9  mx-auto  border-2 border-white text-4xl md:text-6xl text-white max-w-xl  mt-20;
+}
+
+.feature-container{
+  @apply flex flex-col md:flex-row  py-10 px-10 mt-20 mx-auto;
+}
+.creation-content{
+  @apply flex flex-col md:flex-row mx-auto justify-center md:justify-between px-12 mt-16 mb-16
+}
+.item-container{
+  @apply flex flex-col mx-auto md:flex-row justify-between space-y-6 md:space-y-0 md:space-x-8 px-10 w-full text-white uppercase ;
+}
+.icon{
+  @apply flex md:space-x-4 mt-5 font-semibold md:mx-0 mx-auto flex-col md:flex-row text-center space-y-8 md:space-y-0  w-20 ;
+}
+.footer-content{
+  @apply flex flex-col md:flex-row mx-auto  md:justify-between  bg-black text-white  ;
+}
+
+@layer base{
+  .creation-content h1{
+      @apply  md:text-5xl text-4xl font-medium uppercase md:tracking-wide text-center;
+  }
+   .btn{
+    @apply uppercase hidden md:block hover:bg-black hover:text-white border-2 border-black text-xl font-bold px-12 tracking-widest py-2 justify-center items-center
+  }
+  h3{
+   @apply absolute duration-200 md:bottom-8 bottom-6 group-hover:scale-110 px-10 hover:text-black w-48 text-2xl;
+  }
+  #feature h1{
+    @apply md:max-w-lg  text-center md:text-left text-3xl md:text-5xl text-black mb-8;
+  }
+  #feature p{
+    @apply md:max-w-md px-2 text-gray-800;
+  }
+}
+.hamburger{
+  position:relative;
+  cursor:pointer;
+  width:24px;
+  height:24px;
+  transition:all 0.25s;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position:absolute;
+  width:24px;
+  height:2px;
+  top:0px;
+  left:0px;
+  background-color:white;
+  transform:rotate(0.5deg);
+  transition:all 0.5s;
+}
+.hamburger-middle{
+  transform:translateY(7px);
+} 
+.hamburger-bottom{
+  transform:translateY(14px);
+}
+
+.open{
+   transform:rotate(90deg )   
+}
+.open .hamburger-top{
+  transform:rotate(45deg)  translateX(6px) translateY(6px);
+} 
+.open .hamburger-middle{
+  display:none;
+}
+.open .hamburger-bottom{
+  transform:rotate(-45deg)  translateX(-6px) translateY(6px);
+} 
+
